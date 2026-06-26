@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>420 Robotics — Daily Output</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: Arial; background:#111; color:#fff; padding:20px; }
+h1 { text-align:center; }
+button {
+  width:100%; padding:18px; margin:10px 0;
+  background:#1e90ff; border:none; color:white;
+  font-size:20px; border-radius:10px;
+}
+#out { margin-top:30px; padding:20px; background:#222; border-radius:10px; }
+</style>
+</head>
+<body>
+
+<h1>420 Robotics — Daily Output</h1>
+
+<button onclick="add('🚀 System Update')">System Update</button>
+<button onclick="add('🤖 Robot Output')">Robot Output</button>
+<button onclick="add('📸 Media Drop')">Media Drop</button>
+<button onclick="add('🔧 Work Log')">Work Log</button>
+<button onclick="add('🔥 Quick Post')">Quick Post</button>
+
+<div id="out"></div>
+
+<script>
+function add(type){
+  let msg = prompt("Enter your update:");
+  if(!msg) return;
+  let box = document.getElementById("out");
+  let time = new Date().toLocaleString();
+  box.innerHTML = `<p><b>${type}</b> — ${time}<br>${msg}</p>` + box.innerHTML;
+}
+</script>
+
+</body>
+</html>
